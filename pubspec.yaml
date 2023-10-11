@@ -1,5 +1,5 @@
 name: mitblr_club_app
-description: A new Flutter project.
+description: Admin-facing application for registrations and attendance.
 publish_to: 'none'
 
 version: 1.0.0+1
@@ -10,19 +10,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_localizations:
-    sdk: flutter
 
 dev_dependencies:
-
   flutter_lints: ^2.0.0
 
 flutter:
   uses-material-design: true
 
-  # Enable generation of localized Strings from arb files.
-  generate: true
-
   assets:
-    # Add assets from the images directory to the application.
     - assets/images/
