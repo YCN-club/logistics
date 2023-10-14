@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mitblr_club_app/src/events/views/events_view.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -19,14 +20,22 @@ class _LoginViewState extends State<LoginView> {
         child: Center(
           child: Form(
             key: _formKey,
-            autovalidateMode: AutovalidateMode.onUserInteraction,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
                   padding:
+                      const EdgeInsets.symmetric(horizontal: 32, vertical: 24),
+                  child: Image.asset(
+                    'lib/assets/logo.png',
+                    fit: BoxFit.fill,
+                  ),
+                ),
+                Padding(
+                  padding:
                       const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
                   child: TextFormField(
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
                     decoration: const InputDecoration(
                         border: UnderlineInputBorder(), labelText: 'Username'),
                     keyboardType: TextInputType.number,
@@ -37,6 +46,7 @@ class _LoginViewState extends State<LoginView> {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
                   child: TextFormField(
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
                     decoration: InputDecoration(
                       border: const UnderlineInputBorder(),
                       labelText: 'Password',
@@ -56,11 +66,15 @@ class _LoginViewState extends State<LoginView> {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 4, vertical: 24),
                   child: FilledButton.tonal(
-                    onPressed: () {
+                    onPressed: () async {
                       if (_formKey.currentState!.validate()) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Processing Data...')),
+                          const SnackBar(content: Text('Logging In...')),
                         );
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const EventsView()));
                       }
                     },
                     child: const Text('Submit'),
