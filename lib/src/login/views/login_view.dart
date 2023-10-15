@@ -71,6 +71,7 @@ class _LoginViewState extends State<LoginView> {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(content: Text('Logging In...')),
                         );
+                        await Future.delayed(const Duration(seconds: 3));
                         Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
