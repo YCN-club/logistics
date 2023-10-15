@@ -12,10 +12,7 @@ class EventList extends StatelessWidget {
     return ListView.builder(
       itemCount: events?.length,
       itemBuilder: (context, index) {
-        return EventCard(
-          title: Text(events![index].name),
-          child: const Text('This is a test.'),
-        );
+        return EventCard(event: events![index]);
       },
     );
   }

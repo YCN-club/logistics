@@ -11,9 +11,13 @@ class Event {
     required this.participants,
   });
 
+  static String convertDate(DateTime dateTime) {
+    return '${dateTime.day.toString()}/${dateTime.month.toString()}/${dateTime.year.toString()}, ${dateTime.hour.toString()}:${dateTime.minute.toString()}';
+  }
+
   factory Event.fromJson(Map<String, dynamic> json) {
     return Event(
-      date: json['date'] as String,
+      date: convertDate(DateTime.parse(json['date'])),
       location: json['location'] as String,
       name: json['name'] as String,
       participants: json['participants'] as int,
