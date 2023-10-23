@@ -1,12 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:mitblr_club_app/src/events/models/event_model.dart';
 import 'package:mitblr_club_app/src/login/views/login_view.dart';
 
-class AttendView extends StatelessWidget {
-  const AttendView({Key? key}) : super(key: key);
+class AttendView extends StatefulWidget {
+  final Event? event;
+
+  const AttendView({super.key, required this.event});
+
+  @override
+  State<AttendView> createState() => _AttendViewState();
+}
+
+class _AttendViewState extends State<AttendView> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: Image.asset(
           'lib/assets/logo.png',
@@ -14,7 +25,6 @@ class AttendView extends StatelessWidget {
         ),
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         toolbarHeight: 80,
-        elevation: 0,
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 12.0),
@@ -24,8 +34,12 @@ class AttendView extends StatelessWidget {
                   const SnackBar(content: Text('Logging Out...')),
                 );
                 await Future.delayed(const Duration(seconds: 3));
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => const LoginView()));
+                if (context.mounted) {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginView()));
+                }
               },
               icon: const Icon(Icons.exit_to_app),
             ),
@@ -33,14 +47,33 @@ class AttendView extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 1.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextFormField(),
-          ],
+        padding: const EdgeInsets.all(20),
+        child: Center(
+          child: Form(
+            key: _formKey,
+            child: TextFormField(
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              decoration: InputDecoration(
+                border: const UnderlineInputBorder(),
+                labelText: 'Registration Number',
+                suffixIcon: IconButton(
+                  icon: const Icon(Icons.send),
+                  onPressed: () {},
+                ),
+              ),
+              keyboardType: TextInputType.number,
+              validator: _validator,
+            ),
+          ),
         ),
       ),
     );
+  }
+
+  String? _validator(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'This field is required.';
+    }
+    return null;
   }
 }
