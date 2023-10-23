@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'login/views/login_view.dart';
+import 'package:mitblr_club_app/src/login/views/login_view.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
