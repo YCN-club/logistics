@@ -17,6 +17,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.2"
+  async:
+    dependency: transitive
+    description:
+      name: async
+      sha256: "947bfcf187f74dbc5e146c9eb9c0f10c9f8b30743e341481c1e2ed3ecc18c20c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.11.0"
   characters:
     dependency: transitive
     description:
@@ -65,6 +73,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.3"
+  dio:
+    dependency: "direct main"
+    description:
+      name: dio
+      sha256: "417e2a6f9d83ab396ec38ff4ea5da6c254da71e4db765ad737a42af6930140b7"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.3.3"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -86,6 +102,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.3"
+  http_parser:
+    dependency: transitive
+    description:
+      name: http_parser
+      sha256: "2aa08ce0341cc9b354a498388e30986515406668dbcc4f7c950c3e715496693b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.0.2"
   image:
     dependency: transitive
     description:
