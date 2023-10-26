@@ -11,6 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   dio: ^5.3.3
+  flutter_native_splash: ^2.3.4
 
 dev_dependencies:
   flutter_launcher_icons: ^0.13.1
