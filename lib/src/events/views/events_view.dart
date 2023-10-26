@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:mitblr_club_app/src/events/components/event_list.dart';
 import 'package:mitblr_club_app/src/events/models/event_model.dart';
+import 'package:mitblr_club_app/src/login/components/logout_dialog.dart';
 import 'package:mitblr_club_app/src/login/views/login_view.dart';
 
 Future<List<Event>> fetchEvents() async {
@@ -48,14 +49,12 @@ class EventsView extends StatelessWidget {
                   padding: const EdgeInsets.only(right: 12.0),
                   child: IconButton(
                     onPressed: () async {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Logging Out...')),
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return const LogoutDialog();
+                        },
                       );
-                      await Future.delayed(const Duration(seconds: 3));
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const LoginView()));
                     },
                     icon: const Icon(Icons.exit_to_app),
                   ),
