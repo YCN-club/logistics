@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mitblr_club_app/src/events/views/events_view.dart';
+import 'package:mitblr_club_app/src/login/controllers/login_controller.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -9,8 +9,17 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
+  final LoginController _loginController = LoginController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   bool _isHidden = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _initSharedPreferences();
+  }
+
+  _initSharedPreferences() {}
 
   @override
   Widget build(BuildContext context) {
@@ -68,14 +77,7 @@ class _LoginViewState extends State<LoginView> {
                   child: FilledButton.tonal(
                     onPressed: () async {
                       if (_formKey.currentState!.validate()) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Logging In...')),
-                        );
-                        await Future.delayed(const Duration(seconds: 3));
-                        Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const EventsView()));
+                        _loginController.login(context);
                       }
                     },
                     child: const Text('Submit'),
