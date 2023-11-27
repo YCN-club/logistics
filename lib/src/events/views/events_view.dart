@@ -8,7 +8,7 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:mitblr_club_app/src/events/components/event_list.dart';
 import 'package:mitblr_club_app/src/events/models/event_model.dart';
 import 'package:mitblr_club_app/src/login/components/logout_dialog.dart';
-import 'package:mitblr_club_app/src/login/views/login_view.dart';
+import 'package:mitblr_club_app/src/login/controllers/login_controller.dart';
 
 Future<List<Event>> fetchEvents() async {
   final String jsonString =
@@ -24,9 +24,10 @@ List<Event> parseEvents(String jsonString) {
 }
 
 class EventsView extends StatelessWidget {
-  final List<Event>? events;
+  EventsView({Key? key, this.events}) : super(key: key);
 
-  const EventsView({Key? key, this.events}) : super(key: key);
+  final List<Event>? events;
+  final LoginController _loginController = LoginController();
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +53,9 @@ class EventsView extends StatelessWidget {
                       showDialog(
                         context: context,
                         builder: (BuildContext context) {
-                          return const LogoutDialog();
+                          return LogoutDialog(
+                            loginController: _loginController,
+                          );
                         },
                       );
                     },
