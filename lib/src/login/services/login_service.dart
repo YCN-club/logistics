@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:mitblr_club_app/src/utils/constants.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginService {
   final _dio = Dio(
@@ -11,6 +12,8 @@ class LoginService {
       },
     ),
   );
+  final Future<SharedPreferences> _preferences =
+      SharedPreferences.getInstance();
   String token = '';
 
   Future<Response?> validate() async {

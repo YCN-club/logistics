@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mitblr_club_app/src/login/components/submit_button.dart';
 import 'package:mitblr_club_app/src/login/controllers/login_controller.dart';
 
 class LoginView extends StatefulWidget {
@@ -12,14 +13,6 @@ class _LoginViewState extends State<LoginView> {
   final LoginController _loginController = LoginController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   bool _isHidden = true;
-
-  @override
-  void initState() {
-    super.initState();
-    _initSharedPreferences();
-  }
-
-  _initSharedPreferences() {}
 
   @override
   Widget build(BuildContext context) {
@@ -72,17 +65,12 @@ class _LoginViewState extends State<LoginView> {
                   ),
                 ),
                 Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 4, vertical: 24),
-                  child: FilledButton.tonal(
-                    onPressed: () async {
-                      if (_formKey.currentState!.validate()) {
-                        _loginController.login(context);
-                      }
-                    },
-                    child: const Text('Submit'),
-                  ),
-                ),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 4, vertical: 24),
+                    child: SubmitButton(
+                      formKey: _formKey,
+                      loginController: _loginController,
+                    )),
               ],
             ),
           ),
