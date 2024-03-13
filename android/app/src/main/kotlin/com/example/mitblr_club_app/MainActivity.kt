@@ -1,4 +1,4 @@
-package com.example.mitblr_club_app
+package com.example.logistics
 
 import io.flutter.embedding.android.FlutterActivity
 

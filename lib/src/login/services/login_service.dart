@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:mitblr_club_app/src/utils/constants.dart';
+import 'package:logistics/src/utils/constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginService {

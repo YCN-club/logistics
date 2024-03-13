@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mitblr_club_app/src/events/views/events_view.dart';
-import 'package:mitblr_club_app/src/login/services/login_service.dart';
-import 'package:mitblr_club_app/src/login/views/login_view.dart';
+import 'package:logistics/src/events/views/events_view.dart';
+import 'package:logistics/src/login/services/login_service.dart';
+import 'package:logistics/src/login/views/login_view.dart';
 
 class LoginController {
   LoginService _loginService = LoginService();

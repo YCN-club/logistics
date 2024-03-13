@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mitblr_club_app/src/attend/views/attend_view.dart';
-import 'package:mitblr_club_app/src/events/models/event_model.dart';
+import 'package:logistics/src/attend/views/attend_view.dart';
+import 'package:logistics/src/events/models/event_model.dart';
 
 class EventCard extends StatefulWidget {
   const EventCard({super.key, required this.event});

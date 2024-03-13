@@ -5,10 +5,10 @@ import 'dart:ui';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:mitblr_club_app/src/events/components/event_list.dart';
-import 'package:mitblr_club_app/src/events/models/event_model.dart';
-import 'package:mitblr_club_app/src/login/components/logout_dialog.dart';
-import 'package:mitblr_club_app/src/login/controllers/login_controller.dart';
+import 'package:logistics/src/events/components/event_list.dart';
+import 'package:logistics/src/events/models/event_model.dart';
+import 'package:logistics/src/login/components/logout_dialog.dart';
+import 'package:logistics/src/login/controllers/login_controller.dart';
 
 Future<List<Event>> fetchEvents() async {
   final String jsonString =

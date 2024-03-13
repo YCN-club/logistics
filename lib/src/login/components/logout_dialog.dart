@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mitblr_club_app/src/login/controllers/login_controller.dart';
+import 'package:logistics/src/login/controllers/login_controller.dart';
 
 class LogoutDialog extends StatelessWidget {
   const LogoutDialog({super.key, required this.loginController});

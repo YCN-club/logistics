@@ -1,6 +1,10 @@
-include: package:flutter_lints/flutter.yaml
-
 linter:
   rules:
-    avoid_print: false
-    prefer_single_quotes: true
+    - always_use_package_imports
+    - prefer_single_quotes
+
+analyzer:
+  errors:
+    invalid_annotation_target: ignore
+  plugins:
+    - custom_lint

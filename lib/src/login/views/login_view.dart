@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mitblr_club_app/src/login/components/submit_button.dart';
-import 'package:mitblr_club_app/src/login/controllers/login_controller.dart';
+import 'package:logistics/src/login/components/submit_button.dart';
+import 'package:logistics/src/login/controllers/login_controller.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});

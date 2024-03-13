@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mitblr_club_app/src/events/components/event_card.dart';
-import 'package:mitblr_club_app/src/events/models/event_model.dart';
+import 'package:logistics/src/events/components/event_card.dart';
+import 'package:logistics/src/events/models/event_model.dart';
 
 class EventList extends StatelessWidget {
   final List<Event>? events;

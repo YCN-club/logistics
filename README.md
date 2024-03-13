@@ -1,4 +1,4 @@
-# mitblr_club_app
+# logistics
 
 A new Flutter project.
 

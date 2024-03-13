@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mitblr_club_app/src/events/models/event_model.dart';
-import 'package:mitblr_club_app/src/login/views/login_view.dart';
+import 'package:logistics/src/events/models/event_model.dart';
+import 'package:logistics/src/login/views/login_view.dart';
 
 class AttendView extends StatefulWidget {
   final Event? event;
