@@ -20,7 +20,7 @@ class _AttendViewState extends State<AttendView> {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: Image.asset(
-          'lib/assets/logo.png',
+          'assets/mitblr.club/logo-dark.png',
           width: 160,
         ),
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,

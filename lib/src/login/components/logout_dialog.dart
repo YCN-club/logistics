@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:logistics/src/login/controllers/login_controller.dart';
 
 class LogoutDialog extends StatelessWidget {
-  const LogoutDialog({super.key, required this.loginController});
-
-  final LoginController loginController;
+  const LogoutDialog({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +11,7 @@ class LogoutDialog extends StatelessWidget {
       content: const Text('Yo bruh you sure you wanna logout?'),
       actions: <Widget>[
         TextButton(
-          onPressed: () {
-            loginController.logout(context);
-          },
+          onPressed: () {},
           child: const Text('Yes'),
         ),
         TextButton(

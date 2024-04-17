@@ -5,10 +5,10 @@ import 'dart:ui';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
+
 import 'package:logistics/src/events/components/event_list.dart';
 import 'package:logistics/src/events/models/event_model.dart';
 import 'package:logistics/src/login/components/logout_dialog.dart';
-import 'package:logistics/src/login/controllers/login_controller.dart';
 
 Future<List<Event>> fetchEvents() async {
   final String jsonString =
@@ -27,7 +27,6 @@ class EventsView extends StatelessWidget {
   EventsView({Key? key, this.events}) : super(key: key);
 
   final List<Event>? events;
-  final LoginController _loginController = LoginController();
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +39,7 @@ class EventsView extends StatelessWidget {
             filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
             child: AppBar(
               title: Image.asset(
-                'lib/assets/logo.png',
+                'assets/mitblr.club/logo-dark.png',
                 width: 160,
               ),
               forceMaterialTransparency: true,
@@ -53,9 +52,7 @@ class EventsView extends StatelessWidget {
                       showDialog(
                         context: context,
                         builder: (BuildContext context) {
-                          return LogoutDialog(
-                            loginController: _loginController,
-                          );
+                          return LogoutDialog();
                         },
                       );
                     },
