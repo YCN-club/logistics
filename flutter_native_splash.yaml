@@ -1,0 +1,19 @@
+# dart run flutter_native_splash:create
+
+flutter_native_splash:
+  color: '#ffffff'
+  image: 'assets/splash/b589ff-outlined.png'
+  branding: 'assets/splash/logo-light.png'
+
+  color_dark: '#111111'
+  image_dark: 'assets/splash/b589ff-filled.png'
+  branding_dark: 'assets/splash/logo-dark.png'
+
+  android_12:
+    color: '#ffffff'
+    image: 'assets/splash/b589ff-outlined.png'
+    branding: 'assets/splash/logo-light.png'
+
+    color_dark: '#111111'
+    image_dark: 'assets/splash/b589ff-filled.png'
+    branding_dark: 'assets/splash/logo-dark.png'
