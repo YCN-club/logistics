@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +7,6 @@ import 'package:flutter/services.dart' show rootBundle;
 
 import 'package:logistics/src/events/components/event_list.dart';
 import 'package:logistics/src/events/models/event_model.dart';
-import 'package:logistics/src/login/components/logout_dialog.dart';
 
 Future<List<Event>> fetchEvents() async {
   final String jsonString =
@@ -31,39 +29,6 @@ class EventsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: PreferredSize(
-        preferredSize: const Size(double.infinity, 80.0),
-        child: ClipRRect(
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-            child: AppBar(
-              title: Image.asset(
-                'assets/mitblr.club/logo-dark.png',
-                width: 160,
-              ),
-              forceMaterialTransparency: true,
-              elevation: 0.0,
-              actions: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 12.0),
-                  child: IconButton(
-                    onPressed: () async {
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return LogoutDialog();
-                        },
-                      );
-                    },
-                    icon: const Icon(Icons.exit_to_app),
-                  ),
-                )
-              ],
-            ),
-          ),
-        ),
-      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 1.0),
         child: FutureBuilder<List<Event>>(

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+
 import 'package:logistics/src/events/models/event_model.dart';
-import 'package:logistics/src/login/views/login_view.dart';
+import 'package:logistics/src/navigation/components/sub_view_app_bar.dart';
 
 class AttendView extends StatefulWidget {
-  final Event? event;
+  final Event event;
 
   const AttendView({super.key, required this.event});
 
@@ -17,52 +18,60 @@ class _AttendViewState extends State<AttendView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        title: Image.asset(
-          'assets/mitblr.club/logo-dark.png',
-          width: 160,
-        ),
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        toolbarHeight: 80,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 12.0),
-            child: IconButton(
-              onPressed: () async {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Logging Out...')),
-                );
-                await Future.delayed(const Duration(seconds: 3));
-                if (context.mounted) {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const LoginView()));
-                }
-              },
-              icon: const Icon(Icons.exit_to_app),
-            ),
-          )
-        ],
+      appBar: PreferredSize(
+        child: SubViewAppBar(),
+        preferredSize: Size(double.infinity, 65.0),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(18.0),
         child: Center(
-          child: Form(
-            key: _formKey,
-            child: TextFormField(
-              autovalidateMode: AutovalidateMode.onUserInteraction,
-              decoration: InputDecoration(
-                border: const UnderlineInputBorder(),
-                labelText: 'Registration Number',
-                suffixIcon: IconButton(
-                  icon: const Icon(Icons.send),
-                  onPressed: () {},
-                ),
+          child: SingleChildScrollView(
+            child: Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    widget.event.name,
+                    style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.left,
+                  ),
+                  SizedBox(
+                    height: 6,
+                  ),
+                  Text(
+                    widget.event.club,
+                    style: TextStyle(fontSize: 18),
+                    textAlign: TextAlign.left,
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Form(
+                    key: _formKey,
+                    child: TextFormField(
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                      decoration: InputDecoration(
+                        border: const OutlineInputBorder(),
+                        labelText: 'Registration Number',
+                        suffixIcon: IconButton(
+                          icon: const Icon(Icons.send),
+                          onPressed: () {},
+                        ),
+                      ),
+                      keyboardType: TextInputType.number,
+                      validator: _validator,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Text(
+                    '${widget.event.participants} registrations',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                    textAlign: TextAlign.left,
+                  ),
+                ],
               ),
-              keyboardType: TextInputType.number,
-              validator: _validator,
             ),
           ),
         ),

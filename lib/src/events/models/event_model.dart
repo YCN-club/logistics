@@ -2,12 +2,14 @@ class Event {
   final String date;
   final String location;
   final String name;
+  final String club;
   final int participants;
 
   Event({
     required this.date,
     required this.location,
     required this.name,
+    required this.club,
     required this.participants,
   });
 
@@ -20,6 +22,7 @@ class Event {
       date: convertDate(DateTime.parse(json['date'])),
       location: json['location'] as String,
       name: json['name'] as String,
+      club: json['club'] as String,
       participants: json['participants'] as int,
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:logistics/src/attend/views/attend_view.dart';
 import 'package:logistics/src/events/models/event_model.dart';
 
@@ -39,27 +40,30 @@ class _EventCardState extends State<EventCard> {
                   Text(
                     widget.event.name,
                     style: const TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 18.0),
+                        fontWeight: FontWeight.bold, fontSize: 20.0),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 10.0, horizontal: 0.0),
-                    child: Row(
-                      children: [
-                        const Padding(
-                          padding: EdgeInsets.only(right: 4.0),
-                          child: Icon(Icons.alarm, size: 18.0),
-                        ),
-                        Text(widget.event.date),
-                        const Text(' • '),
-                        const Padding(
-                          padding: EdgeInsets.only(right: 4.0),
-                          child: Icon(Icons.people, size: 18.0),
-                        ),
-                        Text(
-                            '${widget.event.participants.toString()} registrations'),
-                      ],
-                    ),
+                  SizedBox(
+                    height: 4,
+                  ),
+                  Text(widget.event.club),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Row(
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.only(right: 4.0),
+                        child: Icon(Icons.alarm, size: 18.0),
+                      ),
+                      Text(widget.event.date),
+                      const Text(' • '),
+                      const Padding(
+                        padding: EdgeInsets.only(right: 4.0),
+                        child: Icon(Icons.people, size: 18.0),
+                      ),
+                      Text(
+                          '${widget.event.participants.toString()} registrations'),
+                    ],
                   )
                 ],
               ),
