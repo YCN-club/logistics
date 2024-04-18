@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:logistics/src/login/components/submit_button.dart';
+
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
 
@@ -7,9 +9,47 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 64),
         child: Center(
-          child: Image.asset('assets/mitblr.club/launcher-icon.png'),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                'assets/logistics/b589ff-filled.png',
+                width: 156,
+              ),
+              SizedBox(
+                height: 48,
+                width: double.infinity,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                child: Text.rich(
+                  TextSpan(
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: 'Please login with your ',
+                      ),
+                      TextSpan(
+                        text: 'Manipal Learner ID',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      TextSpan(
+                        text: ' to access the application.',
+                      ),
+                    ],
+                  ),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 18),
+                ),
+              ),
+              SizedBox(
+                height: 24,
+                width: double.infinity,
+              ),
+              SubmitButton(),
+            ],
+          ),
         ),
       ),
     );
