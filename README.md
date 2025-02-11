@@ -1,30 +1,16 @@
-# logistics
+# ycn.club logistics
 
-A new Flutter project.
+![](https://img.shields.io/github/v/release/YCN-club/logistics)
+![](https://img.shields.io/github/forks/YCN-club/logistics?style=flat)
 
-## Getting Started
+![](/assets/meta/cover-image.png)
 
-This project is a starting point for a Flutter application that follows the
-[simple app state management
-tutorial](https://flutter.dev/docs/development/data-and-backend/state-mgmt/simple).
+A Flutter-based application that acts as a companion for ycn.club's [noticeboard](https://github.com/YCN-club/noticeboard). It allows student communities to publish events and notices that students can interact with directly in order to register or take other action.
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![](/assets/meta/example-screenshots.png)
 
-## Assets
+> ⚠️ **Notice:** This repository currently acts as a proof-of-concept, not an MVP or a production-ready application. For further information on the project's status and brand identity, please refer to the [organization's README](https://github.com/orgs/YCN-club).
 
-The `assets` directory houses images, fonts, and any other files you want to
-include with your application.
+## Development
 
-The `assets/images` directory contains [resolution-aware
-images](https://flutter.dev/docs/development/ui/assets-and-images#resolution-aware).
-
-## Localization
-
-This project generates localized messages based on arb files found in
-the `lib/src/localization` directory.
-
-To support additional languages, please visit the tutorial on
-[Internationalizing Flutter
-apps](https://flutter.dev/docs/development/accessibility-and-localization/internationalization)
+Refer to [Flutter's documentation](https://docs.flutter.dev/get-started/install) for more information on how to get started with installation and local development of this application.
